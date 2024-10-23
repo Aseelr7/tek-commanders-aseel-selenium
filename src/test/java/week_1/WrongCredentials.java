@@ -29,10 +29,11 @@ public class WrongCredentials {
         WebElement loginButtonElement = driver.findElement(loginButtonLocator);
         loginButtonElement.click();
 
+        Thread.sleep(1000);
         By errorMessageLocator = By.className("error");
         WebElement errorMessageElement = driver.findElement(errorMessageLocator);
         System.out.println(errorMessageElement.getText());
-
+        driver.quit();
 
     }
 }
