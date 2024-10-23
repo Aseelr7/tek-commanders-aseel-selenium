@@ -20,6 +20,7 @@ public class LocatingLinkText {
         By titleLocator = By.className("juQBdA");
         WebElement titleElement = driver.findElement(titleLocator);
         System.out.println(titleElement.getText());
+        driver.quit();
 
 
     }
