@@ -10,9 +10,9 @@ public class usingXpath {
 
 
     ChromeDriver driver = new ChromeDriver();
-    driver.get("https://retail.tekschool-students.com/products");
+    driver.get("https://retail.tekschool-students.com");
 
-
+        Thread.sleep(10000);
         By electronics = By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div/div[2]/img");
         WebElement electronicsElement = driver.findElement(electronics);
         electronicsElement.click();
