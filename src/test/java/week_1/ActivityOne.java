@@ -22,7 +22,7 @@ public class ActivityOne {
         } else System.out.println("Invalid Choice!");
 
         driver.get("https://dev.retail.tekschool-students.com/");
-        System.out.println("Chrome Title: " + driver.getTitle());
+        System.out.println("Title: " + driver.getTitle());
         driver.quit();
 
 
