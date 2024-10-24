@@ -15,12 +15,13 @@ public class ActivityOne {
                          "for opening app with edge press two: ");
         int userChoice = userInput.nextInt();
 
-        if (userChoice == 1 ){
-            driver = new ChromeDriver();
-        } else if (userChoice == 2 ){
-             driver = new EdgeDriver();
-        } else System.out.println("Invalid Choice!");
-
+        switch (userChoice){
+            case 1 : driver = new ChromeDriver();
+            break;
+            case 2 : driver = new EdgeDriver();
+            break;
+            default : System.out.println("Invalid Choice!");
+        }
         driver.get("https://dev.retail.tekschool-students.com/");
         System.out.println("Title: " + driver.getTitle());
         driver.quit();
