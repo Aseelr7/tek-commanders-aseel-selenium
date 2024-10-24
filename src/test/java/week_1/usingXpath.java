@@ -32,6 +32,9 @@ public class usingXpath {
         System.out.println(text);
 
 
+        driver.quit();
+
+
 
 }
 }
