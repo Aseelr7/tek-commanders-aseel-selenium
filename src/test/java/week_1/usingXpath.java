@@ -12,7 +12,7 @@ public class usingXpath {
     ChromeDriver driver = new ChromeDriver();
     driver.get("https://retail.tekschool-students.com");
 
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         By electronics = By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div/div[2]/img");
         WebElement electronicsElement = driver.findElement(electronics);
         electronicsElement.click();
@@ -22,8 +22,9 @@ public class usingXpath {
 
         By playStation = By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/p[1]");
         WebElement playstationElement = driver.findElement(playStation);
-        Thread.sleep(1000);
         playstationElement.click();
+
+        Thread.sleep(1000);
 
         By psTitle = By.xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/div[2]/h1");
         WebElement psTitleElement = driver.findElement(psTitle);
