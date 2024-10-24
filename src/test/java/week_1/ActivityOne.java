@@ -20,7 +20,7 @@ public class ActivityOne {
             break;
             case 2 : driver = new EdgeDriver();
             break;
-            default : System.out.println("Invalid Choice!");
+            default : throw  new RuntimeException("Invalid Choice!");
         }
         driver.get("https://dev.retail.tekschool-students.com/");
         System.out.println("Title: " + driver.getTitle());
