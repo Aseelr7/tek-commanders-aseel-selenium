@@ -10,24 +10,20 @@ public class ActivityOne {
 
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
+        WebDriver driver = null;
         System.out.print("For opening the app with chrome press one \n" +
-                "for opening app with edge press two: ");
+                         "for opening app with edge press two: ");
         int userChoice = userInput.nextInt();
 
         if (userChoice == 1 ){
-            WebDriver driver = new ChromeDriver();
-            driver.get("https://dev.retail.tekschool-students.com/");
-            System.out.println("Chrome Title: " + driver.getTitle());
-
-            driver.quit();
+            driver = new ChromeDriver();
         } else if (userChoice == 2 ){
-            WebDriver driver = new EdgeDriver();
-            driver.get("https://dev.retail.tekschool-students.com/");
-            System.out.println("Edge Title: " + driver.getTitle());
-            driver.quit();
+             driver = new EdgeDriver();
         } else System.out.println("Invalid Choice!");
 
-
+        driver.get("https://dev.retail.tekschool-students.com/");
+        System.out.println("Chrome Title: " + driver.getTitle());
+        driver.quit();
 
 
     }
