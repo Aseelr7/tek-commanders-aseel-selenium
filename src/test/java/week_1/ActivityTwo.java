@@ -20,7 +20,7 @@ public class ActivityTwo {
         searchBarElement.click();
         searchBarElement.sendKeys("Apple");
 
-        By searchButton = By.className("ant-btn");
+        By searchButton = By.xpath("/html/body/div/div/span/span/span/button");
         WebElement searchButtonElement = driver.findElement(searchButton);
         searchButtonElement.click();
         Thread.sleep(500);
