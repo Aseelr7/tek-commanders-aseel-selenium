@@ -36,7 +36,9 @@ public class ActivityTwo {
 
         if (cardCounter == 3 ){
             System.out.println("Test Passed");
-        } else System.out.println("Test Failed not 3 cards on the page");
+            System.out.println("number of cards: " + cardCounter );
+        } else System.out.println("Test Failed not 3 cards on the page" + "\n" +
+                "number of cards: " + cardCounter);
 
         driver.quit();
 
