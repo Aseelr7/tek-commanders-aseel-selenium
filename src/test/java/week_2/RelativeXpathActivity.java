@@ -15,7 +15,6 @@ public class RelativeXpathActivity {
         Thread.sleep(1000);
 
         WebElement searchBar = driver.findElement(By.xpath("//input[@id = 'searchInput']"));
-        searchBar.click();
         searchBar.sendKeys("KeyBoard");
 
         WebElement searchButton = driver.findElement(By.xpath("//button[@id = 'searchBtn' ]"));
