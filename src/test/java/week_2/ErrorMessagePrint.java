@@ -22,8 +22,7 @@ public class ErrorMessagePrint {
         Thread.sleep(1000);
 
         driver.findElement(By.xpath("//button[@id = 'signupBtn']")).click();
-        List< WebElement > errors = driver.findElements(By.xpath("//div[@class = 'error']"));
-        System.out.println( driver.findElement(By.xpath("//pre[@class= 'error']")).getText());
+        List< WebElement > errors = driver.findElements(By.xpath("//*[@class = 'error']"));
 
         for (WebElement error : errors){
             System.out.println(error.getText());
