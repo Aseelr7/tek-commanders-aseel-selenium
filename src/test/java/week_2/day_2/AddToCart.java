@@ -1,6 +1,7 @@
 package week_2.day_2;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AddToCart {
@@ -20,9 +21,18 @@ public class AddToCart {
         Thread.sleep(1000);
 
         driver.findElement(By.xpath("//button[@type = 'submit']")).click();
-        Thread.sleep(1000);
+        Thread.sleep(5000);
 
-        String initialCartNumber = driver.findElement(By.xpath("//span[@id = 'cartQuantity']")).getText();
+
+        // fix this!!!
+        String initialCartNumber = "0";
+        try{
+        if (driver.findElement(By.xpath("//div[@id = 'cartBtn']/span")).isDisplayed()) {
+            initialCartNumber = driver.findElement(By.xpath("//span[@id = 'cartQuantity']")).getText();
+        }
+        } catch (NoSuchElementException e){
+            e.printStackTrace();
+        }
 
         driver.findElement(By.xpath("//input[@id = 'searchInput']")).sendKeys("KeyBoard");
 
@@ -44,8 +54,11 @@ public class AddToCart {
 
         if (Integer.parseInt(initialCartNumber) < Integer.parseInt(secondCartNumber)) {
             System.out.println("Test Passed");
+            System.out.println("items in the card = " + secondCartNumber );
         } else {
             System.out.println("Test Failed");
+            System.out.println("items in the card = " + initialCartNumber );
+
         }
         driver.quit();
     }
