@@ -44,5 +44,6 @@ public class ActivityOne {
           System.out.println("Test Passed");
       }else System.out.println("Test Failed");
 
+      driver.quit();
     }
 }
