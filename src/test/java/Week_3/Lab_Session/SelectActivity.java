@@ -23,7 +23,9 @@ public class SelectActivity {
         String baseUrl = "https://retail.tekschool-students.com/selenium/dropdown";
         driver.get(baseUrl);
 
-        WebElement languages = driver.findElement(By.id("programmingLanguageSelect"));
+        wait.until(ExpectedConditions.urlToBe(baseUrl));
+
+        WebElement languages = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("programmingLanguageSelect")));
         Select dropdown = new Select(languages);
 
        List<WebElement> options =  dropdown.getOptions();
@@ -32,11 +34,12 @@ public class SelectActivity {
             System.out.println(option.getText());
         }
 
+        System.out.println("****************************************************");
+
         dropdown.selectByValue("java");
       WebElement javaOption = dropdown.getFirstSelectedOption();
 
         System.out.println(javaOption.getText());
-
         driver.quit();
 
 
