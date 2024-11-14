@@ -11,7 +11,7 @@ public class Activity {
         String newName = "Aseel";
         String newEmail = "aseel@email.com";
 
-        ElementsAndValidations ev = new ElementsAndValidations();
+        UtilitiesClass ev = new UtilitiesClass();
         ev.navigateToUrl(baseUrl);
 
         // Clicking on Sign In Button
@@ -29,6 +29,11 @@ public class Activity {
         ev.sendKeysWithValidation("//input[@id = 'nameInput']",newName);
         ev.sendKeysWithValidation("//input[@id = 'emailInput']",newEmail);
         ev.clickWithValidation("//button[@id = 'personalUpdateBtn']");
+
+        // altering the month
+        ev.InteractWithSelectByValue("//select[@name = 'expirationMonth']","12");
+        //altering The year
+        ev.InteractWithSelectByValue("//select[@name = 'expirationYear']","2026");
 
         // Verifying The New Info
         ev.textVerification("//h1[@class = 'account__information-username']",newName);

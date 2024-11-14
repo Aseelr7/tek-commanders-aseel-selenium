@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -48,6 +49,13 @@ public class UtilitiesClass {
         if (element.getText().equals(correctString)){
             System.out.println("Test Passed Displayed Info is: " + element.getText());
         }else System.out.println("Test Failed Displayed Info is: " + element.getText());
+    }
+
+    public void InteractWithSelectByValue(String xpath, String value){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        WebElement element = driver.findElement(By.xpath(xpath));
+        Select select = new Select(element);
+        select.selectByValue(value);
     }
 
     public void closeBrowser(){
