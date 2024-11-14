@@ -10,12 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ElementsAndValidations {
+public class UtilitiesClass {
     public  WebDriver driver;
     public  WebDriverWait wait;
     public  Actions action;
 
-    public ElementsAndValidations(){
+    public UtilitiesClass(){
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         action = new Actions(driver);
