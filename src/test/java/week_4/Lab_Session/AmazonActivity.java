@@ -29,7 +29,7 @@ public class AmazonActivity {
         WebElement hello = driver.findElement(By.xpath("//div[@class = 'nav-line-1-container']"));
         action.moveToElement(hello).perform();
 
-      WebElement signInButton =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class = 'nav-action-inner']")));
+      WebElement signInButton =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id= 'nav-flyout-ya-signin']/a[@class='nav-action-signin-button']/span[@class = 'nav-action-inner']")));
         action.moveToElement(signInButton).perform();
         action.click(signInButton).perform();
 
